@@ -8,23 +8,23 @@ import org.mockito.MockitoAnnotations;
 
 public class BookingServiceTests {
 
-    @Mock
-    BookingRepository bookingRepository;
+//    @Mock
+//    BookingRepository bookingRepository;
+//
+//    @InjectMocks
+//    BookingService bookingService;
+//
+//    @Before
+//    public void init () {
+//        MockitoAnnotations.initMocks(this);
+//    }
+//
+//
+//    @Test
+//    public void bookingServiceSavesBookingToRepository() {
+//        assert(false);
 
-    @InjectMocks
-    BookingService bookingService;
 
-    @Before
-    public void init () {
-        MockitoAnnotations.initMocks(this);
-    }
-
-
-    @Test
-    public void bookingServiceSavesBookingToRepository() {
-        assert(false);
-
-
-    }
+//    }
 
 }
