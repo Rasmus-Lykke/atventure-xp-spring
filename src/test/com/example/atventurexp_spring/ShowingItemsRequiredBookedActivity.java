@@ -1,4 +1,4 @@
-package com.example.atventurexp_spring;
+/*package com.example.atventurexp_spring;
 
 
 import org.junit.Test;
@@ -14,8 +14,11 @@ public class ShowingitemsRequiredBookedActivity {
     @Test
     public void customer() {
 
-        int customerList = numberOfParticipants +  ;
-        int customerListAfter = 14;
+
+
+        int customerList = numberOfParticipants + equipmentID ;
+
+        int customerListAfter = ;
 
         //assertequals(customerList, customerListAfter);
 
@@ -23,3 +26,6 @@ public class ShowingitemsRequiredBookedActivity {
 
     }
 }
+
+
+ */
