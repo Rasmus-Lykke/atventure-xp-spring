@@ -1,5 +1,7 @@
 package com.example.atventurexp_spring;
 
+import com.example.atventurexp_spring.Model.Booking;
+import com.example.atventurexp_spring.Repository.BookingRepo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
