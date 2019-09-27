@@ -35,3 +35,13 @@ CREATE TABLE Booking
     FOREIGN KEY (timeLimitID) REFERENCES TimeLimit (timeLimitID) ON DELETE CASCADE
 );
 
+CREATE TABLE Equipment
+(
+	equipmentID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    activityID INT NOT NULL,
+    FOREIGN KEY (activityID) REFERENCES Activities (activityID) ON DELETE CASCADE,
+    equipmentName varchar(30) NOT NULL,
+    equipmentAmount INT NOT NULL
+
+
+);
