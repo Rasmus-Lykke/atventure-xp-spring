@@ -2,8 +2,8 @@
 -- Select the database
 USE AtventureDB;
 
-INSERT INTO `atventuredb`.`aktiviteter` (`aktivitetsNavn`, `aldersbegrænsning`)
-VALUES ('Go-Kart', '17');
+INSERT INTO `atventuredb`.`activities` (`activityName`, `ageRestriction`, `timeLimit` )
+VALUES ('Go-Kart', '17', '16');
 
 
-SELECT * FROM atventuredb.aktiviteter;
+SELECT * FROM atventuredb.activities;
