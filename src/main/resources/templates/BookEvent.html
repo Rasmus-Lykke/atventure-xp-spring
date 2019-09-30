@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserver</title>
+    <link rel="stylesheet" href="../static/MyCss.css">
+</head>
+<body>
+<div id="Wrapper">
+    <div id="Content">
+        <form id="BookEvent_contact" method="post" action="/BookEvent">
+    <h2>Vælg Aktivitet</h2>
+        <select id="BookEvent_selectActivity" name="activityID">
+            <option value="1">Go-Kart</option>
+            <option value="2">Paintball</option>
+            <option value="3">Sumo Wrestling</option>
+        </select>
+        <h2>Antal</h2>
+        <select id="BookEvent_selectNumber" name="participants">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <div class="BookEvent_RadioButtons" >
+            <label class="radio">
+                <input type="radio" name="answer">Privat</label>
+            <label class="radio">
+                <input type="radio" name="answer">Erhverv</label>
+        </div>
+        <h2>Tid Dato</h2>
+
+
+    <input type="text" placeholder="yyyy-MM-dd-HH-mm-ss" name="date">
+          <input type="submit" value="Se Ledighed">
+
+        <h1>KontaktInformation</h1>
+
+            <input type="text" placeholder="Navn" name="contactName"><br>
+            <input type="text" placeholder="Tlf:" name="contactPhone"><br>
+            <input type="email" placeholder="Email:" name="contactEmail">
+
+           <br>
+            <input id="BookEvent_submit" type="submit" value="Book">
+        </form>
+    </div>
+</div>
+</body>
+</html>
