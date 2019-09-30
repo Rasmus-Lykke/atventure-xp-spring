@@ -13,8 +13,8 @@ public class HomeController {
         return "Home.html";
     }
 
-    @GetMapping("/BookingOversigt")
+    @GetMapping("/ViewBookingEquip")
     public String BookingOversigt(Model model){
-        return "BookingOversigt.html";
+        return "ViewBookingEquip.html";
     }
 }
