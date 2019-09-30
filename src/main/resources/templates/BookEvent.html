@@ -8,14 +8,15 @@
 <body>
 <div id="Wrapper">
     <div id="Content">
+        <form id="BookEvent_contact" method="post" action="/BookEvent">
     <h2>Vælg Aktivitet</h2>
-        <select id="BookEvent_selectActivity">
-            <option value="Go-Kart">Go-Kart</option>
-            <option value="Paintball">Paintball</option>
-            <option value="Sumo Wrestling">Sumo Wrestling</option>
+        <select id="BookEvent_selectActivity" name="activityID">
+            <option value="1">Go-Kart</option>
+            <option value="2">Paintball</option>
+            <option value="3">Sumo Wrestling</option>
         </select>
         <h2>Antal</h2>
-        <select id="BookEvent_selectNumber">
+        <select id="BookEvent_selectNumber" name="participants">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -29,29 +30,26 @@
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        <div class="BookEvent_RadioButtons">
+        <div class="BookEvent_RadioButtons" >
             <label class="radio">
                 <input type="radio" name="answer">Privat</label>
             <label class="radio">
                 <input type="radio" name="answer">Erhverv</label>
         </div>
-        <h2>Tid Dato</h2> <form><label>
-        <input id="BookEvent_time" type="date" name="date"/>
-    </label>
-    <input type="text" placeholder="13:00">
-        <select id="BookEvent_selectDuration">
-            <option value="45">45</option>
-            <option value="90">90</option>
-        </select>
-        <input type="submit" value="Se Ledighed">
-    </form>
-        <h1>KontaktInformation</h1>
-        <form id="BookEvent_contact">
-            <input type="text" placeholder="Navn"><br>
-            <input type="text" placeholder="Tlf:"><br>
-            <input type="email" placeholder="Email:">
+        <h2>Tid Dato</h2>
 
-           <br> <input id="BookEvent_submit" type="submit" value="Book">
+
+    <input type="text" placeholder="yyyy-MM-dd-HH-mm-ss" name="date">
+          <input type="submit" value="Se Ledighed">
+
+        <h1>KontaktInformation</h1>
+
+            <input type="text" placeholder="Navn" name="contactName"><br>
+            <input type="text" placeholder="Tlf:" name="contactPhone"><br>
+            <input type="email" placeholder="Email:" name="contactEmail">
+
+           <br>
+            <input id="BookEvent_submit" type="submit" value="Book">
         </form>
     </div>
 </div>
