@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCss.css">
+</head>
+<body>
+<h1>Booking List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>bookingID</th>
+        <th>activityID</th>
+        <th>participants</th>
+        <th>date</th>
+        <th>dateEnd</th>
+        <th>contactName</th>
+        <th>contactPhone</th>
+        <th>contactEmail</th>
+        <th>timeLimitID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Booking:${Bookings}">
+        <td th:text="${Booking.bookingID}" />
+        <td th:text="${Booking.activityID}" />
+        <td th:text="${Booking.participants}" />
+        <td th:text="${Booking.date}" />
+        <td th:text="${Booking.dateEnd}" />
+        <td th:text="${Booking.contactName}" />
+        <td th:text="${Booking.contactPhone}" />
+        <td th:text="${Booking.contactEmail}" />
+        <td th:text="${Booking.timeLimitID}" />
+        <td th:text="${contract.RentalStartKM}" />
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

@@ -2,8 +2,12 @@ package com.example.atventurexp_spring.Repository;
 
 import com.example.atventurexp_spring.Model.Booking;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import java.util.List;
+
 
 import java.util.Date;
 
@@ -18,7 +22,15 @@ public class BookingRepo {
         return null;
     }
 
-package main.java.com.example.atventurexp_spring.Repository;
 
-public class BookingRepo {
+
+    public List<Booking> fetchAll (){
+        String sql = "SELECT * FROM Booking";
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return template.query(sql, rowMapper);
+    }
+
+
+
+
 }

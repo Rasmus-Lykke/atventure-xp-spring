@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.jws.WebParam;
+import java.util.List;
 
 @Controller
 public class BookingController {
@@ -18,7 +18,7 @@ public class BookingController {
     BookingService bookingService;
 
     @GetMapping("/BookEvent")
-    public String BookEvent(){
+    public String BookEvent() {
         return "BookEvent.html";
     }
 
@@ -28,7 +28,11 @@ public class BookingController {
         return "redirect:/";
     }
 
-package main.java.com.example.atventurexp_spring.Controller;
+    @GetMapping ("/BookingInfo")
+    public String bookingRepo (Booking booking){
+        List<Booking> bookingList = BookingService.fetchAll();
 
-public class BookingController {
+        return "BookingInfo.html";
+    }
+
 }

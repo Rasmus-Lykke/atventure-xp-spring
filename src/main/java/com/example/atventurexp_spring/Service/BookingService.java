@@ -5,7 +5,7 @@ import com.example.atventurexp_spring.Repository.BookingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.List;
 
 @Service
 public class BookingService {
@@ -16,7 +16,12 @@ public class BookingService {
         return BookingRepo.addEvent(booking);
     }
 
-package main.java.com.example.atventurexp_spring.Service;
+    @Autowired
+    BookingRepo bookingRepo;
 
-public class BookingService {
+    public List<Booking> fetchAll () {
+        return bookingRepo.fetchAll();
+    }
+
+
 }
