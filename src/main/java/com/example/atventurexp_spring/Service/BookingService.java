@@ -12,8 +12,8 @@ public class BookingService {
     @Autowired
     BookingRepo BookingRepo;
 
-    public void addEvent(Booking booking){
-        BookingRepo.addEvent(booking);
+    public Booking addEvent(Booking booking){
+        return BookingRepo.addEvent(booking);
     }
 
 }

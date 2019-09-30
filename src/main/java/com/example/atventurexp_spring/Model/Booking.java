@@ -12,11 +12,10 @@ public class Booking {
     int bookingID;
     int activityID;
     int participants;
-    Date date;
+    String date;
     String contactName;
     String contactPhone;
     String contactEmail;
-    int timeLimitID;
 
     public int getBookingID() {
         return bookingID;
@@ -34,19 +33,19 @@ public class Booking {
         this.activityID = activityID;
     }
 
-    public int getParticipantsID() {
+    public int getParticipants() {
         return participants;
     }
 
-    public void setParticipantsID(int participantsID) {
-        this.participants = participantsID;
+    public void setParticipants(int participants) {
+        this.participants = participants;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -73,15 +72,6 @@ public class Booking {
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
-
-    public int getTimeLimitID() {
-        return timeLimitID;
-    }
-
-    public void setTimeLimitID(int timeLimitID) {
-        this.timeLimitID = timeLimitID;
-    }
-
 
 
 }
