@@ -1,4 +1,4 @@
-package main.java.com.example.atventurexp_spring.Repository;
+package com.example.atventurexp_spring.Repository;
 
 public class BookingRepo {
 }

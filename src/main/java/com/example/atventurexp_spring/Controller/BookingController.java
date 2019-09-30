@@ -1,4 +1,4 @@
-package main.java.com.example.atventurexp_spring.Controller;
+package com.example.atventurexp_spring.Controller;
 
 public class BookingController {
 }
