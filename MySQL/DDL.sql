@@ -11,9 +11,9 @@ USE AtventureDB;
 CREATE TABLE Activities
 (
     activityID		INT				NOT NULL	AUTO_INCREMENT 	PRIMARY KEY,
-    activityName	VARCHAR(50) 	NOT NULL,
-    ageRestriction  INT	            NOT NULL,
-    timeLimit       INT             NOT NULL
+    activity_name	VARCHAR(50) 	NOT NULL,
+    age_restriction  INT	            NOT NULL,
+    time_limit       INT             NOT NULL
 );
 
 
@@ -24,9 +24,9 @@ CREATE TABLE Booking
     FOREIGN KEY (activityID) REFERENCES Activities (activityID) ON DELETE CASCADE,
 	participants INT NOT NULL,
     date VARCHAR(50) NOT NULL,
-    contactName VARCHAR(50) NOT NULL,
-    contactPhone VARCHAR(10) NOT NULL,
-    contactEmail VARCHAR(75) NOT NULL
+    contact_name VARCHAR(50) NOT NULL,
+    contact_phone VARCHAR(10) NOT NULL,
+    contact_email VARCHAR(75) NOT NULL
 );
 
 CREATE TABLE Equipment
@@ -34,8 +34,6 @@ CREATE TABLE Equipment
 	equipmentID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     activityID INT NOT NULL,
     FOREIGN KEY (activityID) REFERENCES Activities (activityID) ON DELETE CASCADE,
-    equipmentName varchar(30) NOT NULL,
-    equipmentAmount INT NOT NULL
-
-
+    equipment_name varchar(30) NOT NULL,
+    equipment_amount INT NOT NULL
 );
