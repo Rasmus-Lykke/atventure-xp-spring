@@ -1,34 +1,40 @@
 package com.example.atventurexp_spring.Model;
 
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Proxy(lazy=false)
 @Entity
 public class Booking {
 
     @Id
-    int bookingID;
-    int activityID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long bookingID;
+    Long activityID;
     int participants;
     String date;
     String contactName;
     String contactPhone;
     String contactEmail;
 
-    public int getBookingID() {
+    public Long getBookingID() {
         return bookingID;
     }
 
-    public void setBookingID(int bookingID) {
+    public void setBookingID(Long bookingID) {
         this.bookingID = bookingID;
     }
 
-    public int getActivityID() {
+    public Long getActivityID() {
         return activityID;
     }
 
-    public void setActivityID(int activityID) {
+    public void setActivityID(Long activityID) {
         this.activityID = activityID;
     }
 
