@@ -13,8 +13,6 @@ CREATE TABLE Activity
     activityID		INT				NOT NULL	AUTO_INCREMENT 	PRIMARY KEY,
     activity_name	VARCHAR(50) 	NOT NULL,
     restrictions VARCHAR(300)
-
-
 );
 
 
