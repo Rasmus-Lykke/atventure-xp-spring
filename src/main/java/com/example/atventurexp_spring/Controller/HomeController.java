@@ -10,10 +10,6 @@ public class HomeController {
     public String root() {
         return "Home.html";
     }
-    @GetMapping("/")
-    public String Home(Model model){
-        return "Home.html";
-    }
 
     @GetMapping("/ViewBookingEquip")
     public String BookingOversigt(Model model){
