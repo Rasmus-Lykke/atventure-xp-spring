@@ -22,6 +22,15 @@ public class Booking {
     String contactPhone;
     String contactEmail;
     String instructor;
+    String corporate;
+
+    public String getCorporate() {
+        return corporate;
+    }
+
+    public void setCorporate(String corporate) {
+        this.corporate = corporate;
+    }
 
     public String getInstructor() {
         return instructor;
