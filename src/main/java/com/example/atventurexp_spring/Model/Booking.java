@@ -21,6 +21,15 @@ public class Booking {
     String contactName;
     String contactPhone;
     String contactEmail;
+    String instructor;
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String intructor) {
+        this.instructor = intructor;
+    }
 
     public Long getBookingID() {
         return bookingID;

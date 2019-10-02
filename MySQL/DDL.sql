@@ -26,7 +26,9 @@ CREATE TABLE Booking
     date VARCHAR(50) NOT NULL,
     contact_name VARCHAR(50) NOT NULL,
     contact_phone VARCHAR(10) NOT NULL,
-    contact_email VARCHAR(75) NOT NULL
+    contact_email VARCHAR(75) NOT NULL,
+    instructor VARCHAR(50) NOT NULL
+
 );
 
 CREATE TABLE Equipment
