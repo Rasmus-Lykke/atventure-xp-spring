@@ -21,6 +21,33 @@ public class Booking {
     String contactName;
     String contactPhone;
     String contactEmail;
+    String instructor;
+    String corporate;
+    String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getCorporate() {
+        return corporate;
+    }
+
+    public void setCorporate(String corporate) {
+        this.corporate = corporate;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String intructor) {
+        this.instructor = intructor;
+    }
 
     public Long getBookingID() {
         return bookingID;
