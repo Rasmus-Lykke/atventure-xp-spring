@@ -1,11 +1,14 @@
 package com.example.atventurexp_spring.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Equipment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long equipmentID;
     Long activityID;
     String equipmentName;
