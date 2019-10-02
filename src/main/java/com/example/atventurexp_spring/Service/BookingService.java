@@ -22,4 +22,8 @@ public class BookingService {
     public boolean existsById(long id){
         return bookingRepo.existsById(id);
     }
+
+    public Booking getById(Long id){
+        return bookingRepo.getOne(id);
+    }
 }
