@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Reserver</title>
-    <link rel="stylesheet" href="../static/MyCss.css">
+    <link rel="stylesheet"  href="MyCss.css">
 </head>
 <body>
 <div id="Wrapper">
     <div id="Content">
+
+        <h1>Ny Booking</h1>
+
         <form id="BookEvent_contact" method="post" action="/BookEvent">
+
     <h2>Vælg Aktivitet</h2>
-        <select id="BookEvent_selectActivity" name="activityID">
-            <option value="1">Go-Kart</option>
-            <option value="2">Paintball</option>
-            <option value="3">Sumo Wrestling</option>
+        <select id="BookEvent_selectActivity" class="DropDown" name="activityID">
+            <option value="1" class="DropDownOption">Go-Kart</option>
+            <option value="2" class="DropDownOption">Paintball</option>
+            <option value="3" class="DropDownOption">Sumo Wrestling</option>
         </select>
+
+            <h2>Krav</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Krav for aktiviteter</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="activity: ${activityList}">
+            <td th:text="${activity.activityName}"></td>
+            <td th:text="${activity.restrictions}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
         <h2>Antal</h2>
-        <select id="BookEvent_selectNumber" name="participants">
+        <select id="BookEvent_selectNumber" class="DropDown" style="width: 50px" name="participants">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -30,26 +53,30 @@
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
+
         <div class="BookEvent_RadioButtons" >
             <label class="radio">
                 <input type="radio" name="answer">Privat</label>
             <label class="radio">
                 <input type="radio" name="answer">Erhverv</label>
         </div>
+
         <h2>Tid Dato</h2>
 
 
     <input id="BookEvent_time" type="text" placeholder="yyyy-MM-dd-HH-mm-ss" name="date">
           <input type="submit" value="Se Ledighed">
+    <input id="BookEvent_time" type="text" placeholder="yyyy-MM-dd-HH-mm-ss" name="date">
+          <input type="submit" class="myButton" value="Se Ledighed">
 
-        <h1>KontaktInformation</h1>
+        <h2>KontaktInformation</h2>
 
-            <input type="text" placeholder="Navn" name="contactName"><br>
-            <input type="text" placeholder="Tlf:" name="contactPhone"><br>
-            <input type="email" placeholder="Email:" name="contactEmail">
+            <input type="text" class="contactInfo" placeholder="Navn" name="contactName"><br>
+            <input type="text" class="contactInfo" placeholder="Tlf:" name="contactPhone"><br>
+            <input type="email" class="contactInfo" placeholder="Email:" name="contactEmail">
 
            <br>
-            <input id="BookEvent_submit" type="submit" value="Book">
+            <input id="BookEvent_submit"  class="myButtonAccept"  type="submit" value="Book">
         </form>
     </div>
 </div>
