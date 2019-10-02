@@ -23,10 +23,13 @@ CREATE TABLE Booking
     FOREIGN KEY (activityID) REFERENCES Activity (activityID) ON DELETE CASCADE,
 	participants INT NOT NULL,
     date VARCHAR(50) NOT NULL,
-    time VARCHAR(4) NOT NULL,
+    time VARCHAR(50) NOT NULL,
     contact_name VARCHAR(50) NOT NULL,
     contact_phone VARCHAR(10) NOT NULL,
-    contact_email VARCHAR(75) NOT NULL
+    contact_email VARCHAR(75) NOT NULL,
+    instructor VARCHAR(50) NOT NULL,
+    corporate VARCHAR(50) NOT NULL
+
 );
 
 CREATE TABLE Equipment
