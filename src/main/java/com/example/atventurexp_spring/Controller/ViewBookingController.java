@@ -5,23 +5,18 @@ import com.example.atventurexp_spring.Service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 @Controller
-public class BookingController {
-    @Autowired
-    BookingService bookingService;
+public class ViewBookingController {
+@Autowired
+BookingService bookingService;
 
-    @GetMapping("/BookEvent")
-    public String BookEvent(){
-        return "BookEvent.html";
-    }
 
-    @PostMapping("/BookEvent")
-    public String addEvent(@ModelAttribute Booking booking) {
-        bookingService.addEvent(booking);
-        return "redirect:/";
+    @GetMapping("/deleteBooking/{id}")
+    public String deleteBooking(@PathVariable("id") long bookingID){
+        bookingService.deleteBooking(bookingID);
+        return "/viewBooking";
     }
 }
