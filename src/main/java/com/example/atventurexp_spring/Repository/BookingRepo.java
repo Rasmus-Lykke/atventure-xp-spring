@@ -12,7 +12,7 @@ public class BookingRepo {
     JdbcTemplate template;
 
     public Booking addEvent(Booking booking){
-        String sql = "INSERT INTO booking (activityID, participants, date, contactName, contactPhone, contactEmail) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO booking (activityID, participants, date, contact_name, contact_phone, contact_email) VALUES (?, ?, ?, ?, ?, ?)";
         template.update(sql, booking.getActivityID(), booking.getParticipants(), booking.getDate(), booking.getContactName(), booking.getContactPhone(), booking.getContactEmail());
         return null;
     }
