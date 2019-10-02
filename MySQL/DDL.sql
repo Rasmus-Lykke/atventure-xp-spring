@@ -27,7 +27,8 @@ CREATE TABLE Booking
     contact_name VARCHAR(50) NOT NULL,
     contact_phone VARCHAR(10) NOT NULL,
     contact_email VARCHAR(75) NOT NULL,
-    instructor VARCHAR(50) NOT NULL
+    instructor VARCHAR(50) NOT NULL,
+    corporate BOOLEAN NOT NULL
 
 );
 
