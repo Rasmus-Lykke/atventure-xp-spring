@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+
     <meta charset="UTF-8">
     <title>Reserver</title>
     <link rel="stylesheet" href="../static/MyCss.css">
@@ -15,6 +17,24 @@
             <option value="2">Paintball</option>
             <option value="3">Sumo Wrestling</option>
         </select>
+
+            <h2>Krav</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Krav for aktiviteter</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="activity: ${activityList}">
+            <td th:text="${activity.activityName}"></td>
+            <td th:text="${activity.restrictions}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+
         <h2>Antal</h2>
         <select id="BookEvent_selectNumber" name="participants">
             <option value="1">1</option>
@@ -39,7 +59,7 @@
         <h2>Tid Dato</h2>
 
 
-    <input id="BookEvent_time" type="text" placeholder="yyyy-MM-dd-HH-mm-ss" name="date">
+    <input id="BookEvent_time" type="text" placeholder="yyyy-MM-dd-HH-mm" name="date">
           <input type="submit" value="Se Ledighed">
 
         <h1>KontaktInformation</h1>
