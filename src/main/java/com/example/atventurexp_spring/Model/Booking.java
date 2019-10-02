@@ -23,6 +23,15 @@ public class Booking {
     String contactEmail;
     String instructor;
     String corporate;
+    String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getCorporate() {
         return corporate;
