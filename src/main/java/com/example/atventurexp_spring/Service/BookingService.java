@@ -10,20 +10,20 @@ public class BookingService {
     @Autowired
     BookingJpaRepo bookingRepo;
 
-    public Booking addEvent(Booking booking){
-        return bookingRepo.save(booking);
+    public void addBooking(Booking booking){
+        bookingRepo.save(booking);
     }
-
 
     public void deleteBooking(long bookingID){
         bookingRepo.deleteById(bookingID);
     }
 
-    public boolean existsById(long id){
-        return bookingRepo.existsById(id);
+    public void updateByID(Booking booking){
+        bookingRepo.save(booking);
     }
 
     public Booking getById(Long id){
         return bookingRepo.getOne(id);
     }
+
 }

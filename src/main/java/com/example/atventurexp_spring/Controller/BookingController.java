@@ -18,10 +18,11 @@ import java.util.List;
 public class BookingController {
     @Autowired
     BookingService bookingService;
-@Autowired
+    @Autowired
     ActivityService activityService;
+
     @GetMapping("/BookEvent")
-    public String BookEvent(Model model){
+    public String bookBooking(Model model){
         List<Activity> activityList = activityService.getAllActivities();
         model.addAttribute("activityList", activityList);
         return "BookEvent.html";
@@ -29,9 +30,16 @@ public class BookingController {
     }
 
     @PostMapping("/BookEvent")
-    public String addEvent(@ModelAttribute Booking booking) {
-        bookingService.addEvent(booking);
-
+    public String addBooking(@ModelAttribute Booking booking) {
+        bookingService.addBooking(booking);
         return "redirect:/";
     }
+
+
+    @PostMapping("/UpdateBooking")
+    public String updateBooking(@ModelAttribute Booking booking) {
+        bookingService.updateByID(booking);
+        return "redirect:/";
+    }
+
 }
