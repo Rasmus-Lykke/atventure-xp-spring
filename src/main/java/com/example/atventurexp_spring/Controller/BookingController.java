@@ -22,7 +22,7 @@ public class BookingController {
     ActivityService activityService;
 
     @GetMapping("/BookEvent")
-    public String BookBooking(Model model){
+    public String bookBooking(Model model){
         List<Activity> activityList = activityService.getAllActivities();
         model.addAttribute("activityList", activityList);
         return "BookEvent.html";
@@ -31,16 +31,15 @@ public class BookingController {
 
     @PostMapping("/BookEvent")
     public String addBooking(@ModelAttribute Booking booking) {
-        bookingService.addEvent(booking);
-
+        bookingService.addBooking(booking);
         return "redirect:/";
     }
 
-    /*
+
     @PostMapping("/UpdateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
-        bookingService.
+        bookingService.updateByID(booking);
+        return "redirect:/";
     }
 
-     */
 }
