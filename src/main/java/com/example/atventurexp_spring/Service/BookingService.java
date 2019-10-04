@@ -14,7 +14,6 @@ public class BookingService {
         return bookingRepo.save(booking);
     }
 
-
     public void deleteBooking(long bookingID){
         bookingRepo.deleteById(bookingID);
     }
@@ -26,4 +25,5 @@ public class BookingService {
     public Booking getById(Long id){
         return bookingRepo.getOne(id);
     }
+
 }
