@@ -12,57 +12,44 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 @AutoConfigureTestDatabase
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DeleteBooking_Test {
+public class AddBooking_Test {
 
     @Autowired
     BookingJpaRepo bookingRepo;
     @Autowired
     BookingService bookingService;
+    Booking createBooking = new Booking();
 
-    Booking booking = new Booking();
 
 
     @Test
-    public void DeleteBookingTest() {
-
+    public void addBookingTest(){
 
         boolean bookingExistsResult;
 
         bookingExistsResult = bookingRepo.existsById(1L);
         assertThat(bookingExistsResult).isEqualTo(false);
 
-        booking.setActivityID(1L);
-        booking.setParticipants(1);
-        booking.setDate("20-20-2020");
-        booking.setTime("20:00");
-        booking.setContactName("Test");
-        booking.setContactPhone("20202020");
-        booking.setContactEmail("Test@gmail.com");
-        booking.setInstructor("Test");
-        booking.setCorporate("Test");
+        createBooking.setActivityID(1L);
+        createBooking.setParticipants(1);
+        createBooking.setDate("20-20-2020");
+        createBooking.setTime("20:00");
+        createBooking.setContactName("Test");
+        createBooking.setContactPhone("20202020");
+        createBooking.setContactEmail("Test@gmail.com");
+        createBooking.setInstructor("Test");
+        createBooking.setCorporate("Test");
 
 
         // Send to DB
-        bookingService.addBooking(booking);
+        bookingService.addBooking(createBooking);
 
         // lav check om det eksistere!
 
         bookingExistsResult = bookingRepo.existsById(1L);
         assertThat(bookingExistsResult).isEqualTo(true);
-
-
-        bookingService.deleteBooking(1L);
-
-        boolean actualResult = bookingRepo.existsById(1L);
-        assertThat(actualResult).isEqualTo(false);
-
-
     }
-
-
-
 }

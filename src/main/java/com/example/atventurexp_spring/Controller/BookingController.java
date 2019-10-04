@@ -21,7 +21,7 @@ public class BookingController {
 
     @PostMapping("/BookEvent")
     public String addEvent(@ModelAttribute Booking booking) {
-        bookingService.addEvent(booking);
+        bookingService.addBooking(booking);
         return "redirect:/";
     }
 }
