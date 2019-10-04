@@ -50,16 +50,10 @@ public class BookingController {
     }
 
 
-
-    @GetMapping("/UpdateBookingByID/{bookingID}")
-    public String updateBookingByID(@PathVariable("bookingID") long bookingID) {
-        bookingService.getById(bookingID);
-        return "UpdateBookingByID.html";
-    }
-
     @GetMapping("/UpdateBookingByID")
-    public String updateBookingByID(Long bookingID) {
-        bookingService.getById(bookingID);
+    public String updateBookingByID(Model model, Long bookingID) {
+        Booking booking = bookingService.getById(bookingID);
+        model.addAttribute("booking", booking);
         return "UpdateBookingByID.html";
     }
 

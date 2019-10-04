@@ -9,7 +9,7 @@
 
 <h1>Opdater booking</h1>
 
-<form action="/" method="post">
+<form action="/SaveUpdateBookingByID" method="post">
 
     <table>
         <tr>
@@ -57,7 +57,7 @@
                 <p>Kontaktperson: </p>
             </td>
             <td>
-                <input type="text" name="contact_name" th:value="${booking.contact_name}"/>
+                <input type="text" name="contactName" th:value="${booking.contactName}"/>
             </td>
         </tr>
 
@@ -66,7 +66,7 @@
                 <p>Telefonnummer: </p>
             </td>
             <td>
-                <input type="text" name="contact_phone" th:value="${booking.contact_phone}"/>
+                <input type="text" name="contactPhone" th:value="${booking.contactPhone}"/>
             </td>
         </tr>
         <tr>
@@ -74,7 +74,7 @@
                 <p>E-mail: </p>
             </td>
             <td>
-                <input type="text" name="contact_email" th:value="${booking.contact_email}"/>
+                <input type="text" name="contactEmail" th:value="${booking.contactEmail}"/>
             </td>
         </tr>
 
@@ -97,10 +97,8 @@
         </tr>
 
         <tr>
-            <td colspan="2">
-                <button class="green" type="submit">
-                    <i class="material-icons" style="font-size:25px">save</i>
-                </button>
+            <td>
+                <button class="green" type="submit"></button>
             </td>
         </tr>
 
