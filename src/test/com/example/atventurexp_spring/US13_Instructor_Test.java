@@ -73,34 +73,12 @@ public class US13_Instructor_Test {
 
         WebElement element;
 
-        final int ACTIVITY_ID = 1;
-        final int PARTICIPANTS = 5;
-        final String DATE = "2019-10-10 17:30";
         final String INSTRUCTOR = "Jan";
 
         // Get homepage
         driver.get("http://localhost:5050/BookEvent");
 
         // Find element that we know is on the page and assert that it is actually found
-        element = driver.findElement(By.id("BookEvent_selectNumber"));
-        assertNotNull(element);
-
-        // Fill out activity input field in form
-        Select selectActivity = new Select(driver.findElement(By.id("BookEvent_selectActivity")));
-        assertNotNull(selectActivity);
-        selectActivity.selectByIndex(ACTIVITY_ID - 1); // (index starts at zero, so subtract one)
-
-        // Fill out time inut field in form
-        element = driver.findElement(By.id("BookEvent_time"));
-        assertNotNull(element);
-        element.sendKeys(DATE);
-
-        // Fill out participant number input field in form
-        Select selectNumber = new Select(driver.findElement(By.id("BookEvent_selectNumber")));
-        assertNotNull(selectNumber);
-        selectNumber.selectByIndex(PARTICIPANTS - 1); // (index starts at zero, so subtract one)
-
-
         element = driver.findElement(By.id("BookEvent_instructor"));
         assertNotNull(element);
         element.sendKeys(INSTRUCTOR);
