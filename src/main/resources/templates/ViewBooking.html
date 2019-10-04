@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="MyCss.css" />
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>ViewBookingEquip</title>
+    <link rel="stylesheet"  href="/MyCss.css" />
 </head>
-<title>Booking information</title>
 <body>
+<div id="Wrapper">
+    <div id="Content">
 <table>
-
     <tr>
-        <th th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</th>
+        <th><h3 th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</h3></th>
     </tr>
     <tr>
-        <td>For hver tilmeldte skal der klargøres følgende:</td>
+        <td><h3>For hver tilmeldte skal der klargøres følgende:</h3></td>
     </tr>
     <tr th:each="equipment: ${equipmentList}">
         <td th:text="${equipment.equipmentName}">Hjelm</td>
@@ -25,5 +25,7 @@
 
     <input class="myButtonAccept" type="submit" form="DeleteBookingForm" placeholder="Delete"/>
 </form>
+    </div>
+</div>
 </body>
 </html>
