@@ -17,6 +17,6 @@ BookingService bookingService;
     @GetMapping("/deleteBooking/{id}")
     public String deleteBooking(@PathVariable("id") long bookingID){
         bookingService.deleteBooking(bookingID);
-        return "/viewBooking";
+        return "redirect:/";
     }
 }
