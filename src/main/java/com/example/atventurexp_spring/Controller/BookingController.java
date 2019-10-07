@@ -36,8 +36,6 @@ public class BookingController {
     }
 
 
-
-
     @PostMapping("/UpdateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
         bookingService.updateByID(booking);
@@ -62,6 +60,13 @@ public class BookingController {
     public String saveUpdateBookingByID(@ModelAttribute Booking booking) {
         bookingService.updateByID(booking);
         return "redirect:/";
+    }
+
+    @GetMapping("/ViewBookingList")
+    public String viewBookings(Model model){
+        List<Booking> bookingList = bookingService.getAllBookings();
+        model.addAttribute("bookingList", bookingList);
+        return "ViewBookingList.html";
     }
 
 
