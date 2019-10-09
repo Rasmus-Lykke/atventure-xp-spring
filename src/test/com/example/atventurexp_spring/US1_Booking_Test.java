@@ -2,21 +2,17 @@ package com.example.atventurexp_spring;
 
 import com.example.atventurexp_spring.Model.Booking;
 import com.example.atventurexp_spring.Repository.BookingJpaRepo;
-import com.example.atventurexp_spring.Repository.BookingRepo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -31,7 +27,6 @@ import static org.junit.Assert.assertNotNull;
 @AutoConfigureTestDatabase
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 public class US1_Booking_Test {
 
     @Autowired
