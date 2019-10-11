@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>BookingList</title>
+    <link rel="stylesheet"  href="/MyCss.css">
+</head>
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    tr:nth-child(even){background-color: #b2b8ad;}
+</style>
+<body>
+<div id="Wrapper">
+<h1>Booking liste</h1>
+
+<table align="center">
+    <tr>
+    <th>BookingID</th>
+    <th>Aktivitet</th>
+    <th>Deltagere</th>
+    <th>Dato</th>
+    <th>Tid</th>
+    <th>Kontakt navn</th>
+    <th>Instruktør</th>
+    <th>Erhverv</th>
+    </tr>
+    <tr th:each="booking: ${bookingList}">
+        <td th:text="${booking.bookingID}"></td>
+        <td th:text="${booking.activityID}"></td>
+        <td th:text="${booking.participants}"></td>
+        <td th:text="${booking.date}"></td>
+        <td th:text="${booking.time}"></td>
+        <td th:text="${booking.contactName}"></td>
+        <td th:text="${booking.instructor}"></td>
+        <td th:text="${booking.corporate}"></td>
+    </tr>
+
+            <button class="green" type="submit"></button>
+
+
+</table>
+</div>
+</body>
+</html>
