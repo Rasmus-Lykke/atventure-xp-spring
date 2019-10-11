@@ -101,6 +101,16 @@
                     <button class="green" type="submit"></button>
                 </td>
             </tr>
+<table>
+    <tr>
+        <th><h3 id = "ViewBooking_participants" th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</h3></th>
+    </tr>
+    <tr>
+        <td><h3>For hver tilmeldte skal der klargøres følgende:</h3></td>
+    </tr>
+    <tr th:each="equipment: ${equipmentList}">
+        <td class="ViewBooking_equipment" th:text="${equipment.equipmentName}">Hjelm</td>
+    </tr>
 
         </table>
 </form>
