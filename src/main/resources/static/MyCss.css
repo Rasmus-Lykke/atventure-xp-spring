@@ -30,12 +30,13 @@ h1{
 }
 
 
+/*
 div#ContentBox_Reserve{
     height: 500px;
     width: 300px;
     padding: 10%;
 }
-
+*/
 form#BookEvent_contact{
     width:60%;
     margin: 0 5%;

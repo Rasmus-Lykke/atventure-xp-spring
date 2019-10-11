@@ -9,7 +9,7 @@
 <div id="Wrapper">
     <div id="Content">
 
-    <div id="ContentBoxLeft"style="float: left; margin-left: 150px;">
+    <div id="ContentBoxLeft"style="background-color: red; width: 40%; display: inline">
 <form action="fetchBooking" method="get">
         <table>
             <tr>
@@ -100,8 +100,7 @@
         </table>
 </form></div>
     </div>
-<div id="ContentBoxRight" style="float: left; margin-left: 50px;">
-
+<div id="ContentBoxRight" style=" margin-left: 50px; background-color: green; width: 40%; display: inline;">
     <table>
         <tr>
             <th><h3 id = "ViewBooking_participants" th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</h3></th>
@@ -117,6 +116,10 @@
 
 
 </div>
+    <div>
+        <br><!-- DELETE BOOKING -->
+        <a class="myButton" th:href="@{'/deleteBooking/'+${booking.bookingID}} ">Slet</a>
+    </div>
 
     </div>
 </body>
