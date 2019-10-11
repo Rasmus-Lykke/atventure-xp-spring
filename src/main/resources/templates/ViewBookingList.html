@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>BookingList</title>
+    <link rel="stylesheet"  href="/MyCss.css">
 </head>
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    tr:nth-child(even){background-color: #b2b8ad;}
+</style>
 <body>
+<div id="Wrapper">
+<h1>Booking liste</h1>
 
-<h7>Booking liste</h7>
-
-<table>
+<table align="center">
     <tr>
     <th>BookingID</th>
     <th>Aktivitet</th>
@@ -30,6 +37,10 @@
         <td th:text="${booking.corporate}"></td>
     </tr>
 
+            <button class="green" type="submit"></button>
+
+
 </table>
+</div>
 </body>
 </html>
