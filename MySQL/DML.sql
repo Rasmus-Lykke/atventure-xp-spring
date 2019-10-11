@@ -13,7 +13,7 @@ INSERT INTO AtventureDB.booking(bookingID, activityID, participants, date, time,
 VALUES (1, 1, 4,"2019-09-09","08:00","Jason","12345678","jason@derulo.com", "Peter", "false");
 
 INSERT INTO AtventureDB.booking(bookingID, activityID, participants, date, time, contact_name, contact_phone, contact_email, instructor, corporate)
-VALUES (2, 1, 7,"2020-10-11","09:15","Vladimir","987658","vlad@mail.com", "Igor", "true");
+VALUES (2, 1, 7,"2020-10-11","09:30","Vladimir","987658","vlad@mail.com", "Igor", "true");
 
 
 
