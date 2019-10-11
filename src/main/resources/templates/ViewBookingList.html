@@ -35,9 +35,17 @@
         <td th:text="${booking.contactName}"></td>
         <td th:text="${booking.instructor}"></td>
         <td th:text="${booking.corporate}"></td>
+        <td>
+            <a th:href="@{'/ViewBooking/'+${booking.bookingID}}">
+            <button class="btn-viewBooking btn" id="btn.viewBooking" value="Se booking ">Se booking</button>
+            </a>
+        </td>
     </tr>
 
-            <button class="green" type="submit"></button>
+
+
+
+
 
 
 </table>
