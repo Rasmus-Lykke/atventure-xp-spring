@@ -9,7 +9,7 @@
 <div id="Wrapper">
     <div id="Content">
 
-    <div id="ContentBoxLeft"style="float: left;">
+    <div id="ContentBoxLeft"style="float: left; margin-left: 150px;">
 <form action="fetchBooking" method="get">
         <table>
             <tr>
@@ -101,36 +101,27 @@
                     <button class="green" type="submit"></button>
                 </td>
             </tr>
-<table>
-    <tr>
-        <th><h3 id = "ViewBooking_participants" th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</h3></th>
-    </tr>
-    <tr>
-        <td><h3>For hver tilmeldte skal der klargøres følgende:</h3></td>
-    </tr>
-    <tr th:each="equipment: ${equipmentList}">
-        <td class="ViewBooking_equipment" th:text="${equipment.equipmentName}">Hjelm</td>
-    </tr>
-
         </table>
-</form>
+</form></div>
     </div>
 <div id="ContentBoxRight" style="float: left; margin-left: 50px;">
-    <p>Der er tilmeldt </p><p th:text="${participants}"></p><p> personer</p>
+
+    <table>
+        <tr>
+            <th><h3 id = "ViewBooking_participants" th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</h3></th>
+        </tr>
+        <tr>
+            <td><h3>For hver tilmeldte skal der klargøres følgende:</h3></td>
+        </tr>
+        <tr th:each="equipment: ${equipmentList}">
+            <td class="ViewBooking_equipment" th:text="${equipment.equipmentName}">Hjelm</td>
+        </tr>
+
+    </table>
 
 
-    <!--tr><th th:text="Der er tilmeldt ${participants} personer">Der er tilmeldt x personer</th></tr>
-    <tr th:each="equipment: ${equipmentList}">
-        <td th:text="${equipment.equipmentName}"></td>
-    </tr-->
 </div>
-        <!--
-<form method="get" id="DeleteBookingForm" action="/deleteBooking/">
 
-    <input class="myButtonAccept" type="submit" form="DeleteBookingForm" value="Delete"/>
-</form>
--->
-</div>
-</div>
+    </div>
 </body>
 </html>
