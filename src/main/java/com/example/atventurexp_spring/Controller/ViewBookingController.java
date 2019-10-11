@@ -4,6 +4,7 @@ import com.example.atventurexp_spring.Model.Booking;
 import com.example.atventurexp_spring.Service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,5 +19,12 @@ BookingService bookingService;
     public String deleteBooking(@PathVariable("id") long bookingID){
         bookingService.deleteBooking(bookingID);
         return "redirect:/";
+    }
+
+    @GetMapping("/viewBooking/{id}")
+    public String fetchBooking(Model model, @PathVariable("id") long bookingID){
+        bookingService.getById(bookingID);
+        model.addAttribute("booking", bookingID);
+        return "ViewBooking.html";
     }
 }

@@ -8,26 +8,119 @@
 <body>
 <div id="Wrapper">
     <div id="Content">
-<table>
-    <tr>
-        <th><h3 th:text="'Der er tilmeldt ' +${booking.participants}+' personer'">Der er tilmeldt x personer</h3></th>
-    </tr>
-    <tr>
-        <td><h3>For hver tilmeldte skal der klargøres følgende:</h3></td>
-    </tr>
+
+    <div id="ContentBoxLeft"style="float: left;">
+<form action="fetchBooking" method="get">
+        <table>
+            <tr>
+                <td>
+                    <p>Booking-ID: </p>
+                </td>
+                <td>
+                    <input type="text" name="bookingID" th:value="${booking.bookingID}" readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Aktivitets-ID: </p>
+                </td>
+                <td>
+                    <input type="text" name="activityID" th:value="${booking.activityID}"readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Deltagere: </p>
+                </td>
+                <td>
+                    <input type="text" name="participants" th:value="${booking.participants}"readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Dato: </p>
+                </td>
+                <td>
+                    <input type="text" name="date" th:value="${booking.date}"readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Tidspunkt: </p>
+                </td>
+                <td>
+                    <input type="text" name="time" th:value="${booking.time}"readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Kontaktperson: </p>
+                </td>
+                <td>
+                    <input type="text" name="contactName" th:value="${booking.contactName}"readonly/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Telefonnummer: </p>
+                </td>
+                <td>
+                    <input type="text" name="contactPhone" th:value="${booking.contactPhone}"readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>E-mail: </p>
+                </td>
+                <td>
+                    <input type="text" name="contactEmail" th:value="${booking.contactEmail}"readonly/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Instruktør: </p>
+                </td>
+                <td>
+                    <input type="text" name="instructor" th:value="${booking.instructor}"readonly/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Kundetype </p>
+                </td>
+                <td>
+                    <input type="text" name="corporate" th:value="${booking.corporate}"readonly/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="green" type="submit"></button>
+                </td>
+            </tr>
+
+        </table>
+</form>
+    </div>
+<div id="ContentBoxRight" style="float: left; margin-left: 50px;">
+    <p>Der er tilmeldt </p><p th:text="${participants}"></p><p> personer</p>
+
+
+    <!--tr><th th:text="Der er tilmeldt ${participants} personer">Der er tilmeldt x personer</th></tr>
     <tr th:each="equipment: ${equipmentList}">
-        <td th:text="${equipment.equipmentName}">Hjelm</td>
-    </tr>
-
-
-</table>
+        <td th:text="${equipment.equipmentName}"></td>
+    </tr-->
+</div>
         <!--
 <form method="get" id="DeleteBookingForm" action="/deleteBooking/">
 
     <input class="myButtonAccept" type="submit" form="DeleteBookingForm" value="Delete"/>
 </form>
 -->
-    </div>
+</div>
 </div>
 </body>
 </html>
