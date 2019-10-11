@@ -2,19 +2,17 @@ package com.example.atventurexp_spring;
 
 import com.example.atventurexp_spring.Model.Booking;
 import com.example.atventurexp_spring.Repository.BookingJpaRepo;
-import com.example.atventurexp_spring.Repository.BookingRepo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -29,7 +27,6 @@ import static org.junit.Assert.assertNotNull;
 @AutoConfigureTestDatabase
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 public class US1_Booking_Test {
 
     @Autowired
@@ -37,22 +34,21 @@ public class US1_Booking_Test {
 
     private WebDriver driver;
 
-    // Ready the FireFox stuff so we can use it in tests
+    // Ready the Chrome stuff so we can use it in tests
     @BeforeClass
     public static void setupClass() {
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
-    // Before each test start a FireFox browser in headless mode
+    // Before each test start a Chrome browser in headless mode
     @Before
     public void setupTest() {
-        FirefoxOptions options = new FirefoxOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        driver = new FirefoxDriver(options);
-        MockitoAnnotations.initMocks(this);
+        driver = new ChromeDriver(options);
     }
 
-    // Close FireFox after each test
+    // Close Chrome after each test
     @After
     public void teardown() {
         if (driver != null) {
